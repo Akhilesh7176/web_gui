@@ -17,7 +17,6 @@ import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ThreeMFLoader } from 'three/examples/jsm/loaders/3MFLoader.js';
-// import {THREE.JSONLoader} from 'three'
 
 @Component({
   standalone: true,

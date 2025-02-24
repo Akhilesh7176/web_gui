@@ -49,6 +49,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     window.removeEventListener('resize', () => this.onWindowResize());
   }
 
+  // Object loaded as blob response
   fetchAndLoadModel() {
     this.httpClient
       .get('http://localhost:8080/example.obj', { responseType: 'blob' })
@@ -78,7 +79,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }
 
     try {
-      // const loader = new THREE.ObjectLoader
       const loader = new OBJLoader();
       const obj3D = loader.parse(objText);
       this.handleModelLoad(obj3D);
@@ -108,6 +108,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.scene.add(object);
   }
 
+  // Initialises scene
   private initScene(): void {
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xeeeeee);
